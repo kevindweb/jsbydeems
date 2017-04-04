@@ -1,0 +1,127 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>Time Sheet</title>
+  <script src="./index.js" type="javascript"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+	<div id="container">
+    <div id="title">
+      <h1>Generate Time Sheet</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Round your hours</h3>
+            <fieldset id="group1">
+              <div class="radio">
+                <label><input type="radio" checked id="nearestHour" name="group1">Nearest Hour</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" id="nearest.1" name="group1">Nearest .1</label>
+              </div>
+          </fieldset>
+        </div>
+        <div class="col-sm-4">
+          <fieldset id="group2">
+            <div class="radio">
+              <label><input type="radio" id="militaryTime" name="group2">Military Time</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" checked id="civilianTime" name="group2">Civilian Time</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-sm-4">
+          <label for="firstAndLast">Your name:</label>
+          <input type="text" id="firstAndLast" placeholder="Jane Doe">
+
+          <label for="hourlyWage">Hourly wage:</label>
+          <select class="form-control" id="hourlyWage">
+            <option value="<--Please Select-->"></option>
+          </select>
+        </div>
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <button type="button" id="runFunction" class="btn btn-default">Run Program</button>
+    <br>
+    <br>
+    <div id="tables">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Total Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Example</td>
+            <td><input type="text" class="form-control" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="8" disabled><input type="text" class="form-control" style="width: 50px; float: left; position: relative;" value="00" disabled></td>
+            <td><input type="text" class="form-control" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="2" disabled><input type="text" class="form-control" style="width: 50px; float: left; position: relative;" value="00" disabled></td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="mondayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" id ="testing" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="tuesdayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="wednesdayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Thurdsay</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="thursdayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="fridayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td id="saturdayHour"><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td><input type="text" class="form-control timeInHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeInMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control timeOutHour" style="width: 50px; float: left; position: relative; margin-right: 5px;" value="0"><input type="text" class="form-control timeOutMinute" style="width: 50px; float: left; position: relative;" value="00"></td>
+            <td><input type="text" class="form-control dailyHour" style="width: 60px;" value="0" disabled></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Weekly income of <span id="nameHere" style="text-decoration: underline;">name</span> is<h4>
+            <h3>$<span id="finalPay"></span></h3>
+        </div>
+    </div>
+      <br>
+      <br>
+  </div>
+</body>
+</html>
+

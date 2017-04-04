@@ -1,11 +1,2 @@
 # jsmathematics
-JavaScript Explanation of Mathematics Functions - more in README.md
-</br>
-<h5>I realize that these functions already exist in the language.</h5>
-</br>
-There are going to be many different math operations defined in JavaScript, including the first few:
-  <ul>
-    <li>Sine Function</li>
-    <li>Cosine Function</li>
-    <li>E^X Function</li>
-  </ul>
+<h3>These are all of my most biggest javascript files and projects. Some of them are simply javascript functions, web page applications, and NodeJS server-side js.</h3>

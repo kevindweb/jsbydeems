@@ -1,0 +1,56 @@
+body{
+	background: rgb(0,0,0);
+}
+.container{
+	position: absolute;
+	z-index: -100;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	max-width: 100%;
+    min-height: 100%;
+	background: white;
+	font-family: 'Montserrat', sans-serif;
+
+}
+#title h1{
+	font-size: 600%;
+}
+#title{
+  width: 60%;
+  position: relative;
+  height: auto;
+  left: 20%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+}
+.row{
+  margin-bottom: 10px;
+}
+#tables{
+  position: relative;
+  color: white;
+  width: 90%;
+  left: 5%;
+}
+.panel{
+  width: 50%;
+  position: relative;
+  text-align: center;
+  left: 25%;
+}
+.btn{
+  position: relative;
+  width: 120px;
+  left: 45%;
+}
+.form-horizontal{
+  position: relative;left: 50px;
+}
+@media screen and (max-width:595px){
+  #title h1{
+    font-size: 300%;
+  }
+}
